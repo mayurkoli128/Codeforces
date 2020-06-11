@@ -5,9 +5,9 @@ typedef int ln;
 using namespace std;
 
 // Bottom-up approach
-ln solve(int* denominations, int change, int n, vector<vector<ln>>& umap, ln tempN) {
+ln solve(int* denominations, int change, int n, vector<vector<ln>>& umap, ln tempChange) {
 
-    if(n < 0 || change < 0)   return tempN;
+    if(n < 0 || change < 0)   return tempChange;
 
     if(umap[n][change]) return umap[n][change];
 
@@ -15,7 +15,7 @@ ln solve(int* denominations, int change, int n, vector<vector<ln>>& umap, ln tem
         return 0;
     }
     // select the coin...
-    umap[n][change] = min(1 + solve(denominations, change - denominations[n], n, umap, tempN), solve(denominations, change, n - 1, umap, tempN));
+    umap[n][change] = min(1 + solve(denominations, change - denominations[n], n, umap, tempChange), solve(denominations, change, n - 1, umap, tempChange));
 
     return umap[n][change];
 }
@@ -48,7 +48,9 @@ int main() {
     int change = 20;
     int size = sizeof(denominations) / sizeof(int);
     vector<vector<ln>> umap(size, vector<ln>(change + 1, 0));
+
     cout << solve(denominations, change, size - 1, umap, change) << " ";
     cout << solve(denominations, change, size);
+    
     return 0;
 }
