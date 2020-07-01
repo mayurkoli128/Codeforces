@@ -107,11 +107,5 @@ int main()
 {
     int vec[] = {4, 9, 13, 6, 7, 16, 17, 20, -4};
     int size = sizeof(vec) / sizeof(int);
-
-    auto res = kLargest(vec, size, 3);
-
-    for(int i = 0; i < 3; ++i) {
-        cout << res[i] << " ";
-    }
     return 0;
 }
