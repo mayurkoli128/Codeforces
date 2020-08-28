@@ -11,7 +11,6 @@ struct cmp {
         return a > b;
     }
 };
-
 template<class Compare = cmp>
 class priority_queue
 {

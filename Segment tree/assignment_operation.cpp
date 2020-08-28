@@ -10,8 +10,6 @@ vec segment(1000005 * 4);
 int size = 1;
 const int NO_OPEARATION = INT32_MAX;
 
-
-
 void propogate(int index, int lx, int ly) {
     if (lx - ly == 0 || segment[index] == NO_OPEARATION)   return ;
 

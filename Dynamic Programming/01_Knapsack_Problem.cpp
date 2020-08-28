@@ -6,7 +6,7 @@ using namespace std;
 int knapSack(int w, int weight[], int price[], int n) 
 { 
     
-    int dp[n + 1][w + 1] = {{0}};
+    int dp[n + 1][w + 1];
     
     for (int i = 0; i <= n; ++i)
     {
@@ -49,7 +49,7 @@ int knapSack(int* weight, int* price, int n, int w, int (*memo)[MAX]) {
 int main() {
     int weight[] = {4, 2, 7, 8, 9, 10};
     int price[] = {1, 2, 3, 6, 7, 8};
-    int w = 2;
+    int w = 10;
     int n = 4;
     
     cout << knapSack(w, weight, price, n) << " ";

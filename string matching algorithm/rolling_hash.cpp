@@ -1,11 +1,10 @@
 #include <iostream>
 #include <vector>
 
-
 using namespace std;
 
 typedef long long int ln;
-const ln st = 1000000007;
+const ln st = 97;
 
 class hashing {
     vector<ln> pow;
@@ -40,15 +39,16 @@ public :
         if(l == 0) {
             return hash[r];
         }
-        // ln res = ((hash[r] - hash[l - 1])) % MOD;
+        ln res = ((hash[r] - hash[l - 1] + MOD)) % MOD;
         
         // if(res<0) return (res+MOD) / pow[l];
         // return res / pow[l];
 
-        return (hash[r] - (hash[l - 1] * pow[r - l + 1]) % MOD + MOD) % MOD;
-
+        ln val = (res % (MOD * pow[l])) / pow[l];
+        return val;
     }
 };
+
 int main() {
     ios_base :: sync_with_stdio(false);
     cin.tie(NULL);

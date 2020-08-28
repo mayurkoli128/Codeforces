@@ -17,7 +17,7 @@ void initialize(vector<int>& lookup, string s) {
     }
 }
 
-bool solve(string s1, string s2) {
+int solve(string s1, string s2) {
     int index1 = 0, index2 = 0;
     int sz1 = s1.size();
     int sz2 = s2.size();
@@ -25,19 +25,22 @@ bool solve(string s1, string s2) {
     vector<int>lookup(sz2);
     initialize(lookup, s2);
     
+    int res = 0;
     while(index1 < sz1 && index2 < sz2) {
-        if(s1[index1++] == s2[index2]) {
+        if(s1[index1] == s2[index2]) {
             index2++;
         }
         // mismatched...
         else {
             if(index2 > 0){
                 index2 = lookup[index2 - 1];
-                index1 -= 1;
+                // cout << index1 << " ";
             }
+            res = index1 + 1;
         }
+        index1++;
     }
-    return index2 == sz2 ;
+    return res;
 }
 
 int main() {
@@ -53,14 +56,21 @@ int main() {
         cin >> s1 >> s2;
 
         cout << solve(s1, s2) << "\n";
-    }
 
+        cout << s1.size();
+    }
+    cout << '.' - '0';
     return 0;
 }
 
 /*
 TEST CASES :
 12
+1
+geeksforgeekksf
+geekks
+zkctposchvaenxqkrvxiyfxjlgnoodnwycqcqmbrtunbvrubbluvtgbdslahpzdtgsblnstznlnawoty
+nln
 ABABDABACDABABCABAB
 ABABCABAB
 AKDSJNDVNKDJAKVFNFAKDSJNDVNKDJAKVFNFNKAAKDSJNDVNKDJAKVFNFNKAAKDSJNDVNKDJAKVFNFNKAAKDSJNDVNKDJAKVFNFNKAFJADSJNDVNKDJAKVFNFNKAFJVAKDSJNDVNKDJAKVFNFNKAFAKDSJNDVNKDJAKVFNFNKAKDSJNDVNKDJAKVFKAFJVAKDSJNDVNKDJAKVFNFNKAFAKDSJNDVNKDJAKVFNFNKAFJAKDSJNDVNKDJAKVFNFNKAFJAKDSJNDVNKDJAKVAKDSJNDVNKDJAKVFNFNKAKDSJNDVNKDJAKVFNFNKAFJV
