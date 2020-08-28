@@ -1,7 +1,7 @@
 // time complexity analysis...
 // build tree will take linear time o(N)
 // after that for each query getMin function will take o(logN)
-// in the worst case when array is not shuffle i.e, either array is increasing or int decreasing order N recursive call's will be create.
+// in the worst case when array is not shuffle i.e, either array is increasing or in decreasing order, N recursive call's will be create.
 
 // Total time complexity -> O(N)+O(logN)+o(NlogN) = o(NlogN)
 
