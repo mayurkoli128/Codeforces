@@ -23,7 +23,7 @@ void merge (vector<int>& nums, int l, int mid, int r) {
     while (ptr1 < s1)    nums[l++] = p1[ptr1++];
     while (ptr2 < s2)    nums[l++] = p2[ptr2++];
 }
-void mergeSort (vec& nums, int l, int r) {
+void mergeSort (vector<int>& nums, int l, int r) {
     if (l == r) {
         return ;
     }
@@ -31,7 +31,6 @@ void mergeSort (vec& nums, int l, int r) {
 
     mergeSort(nums, l, mid);
     mergeSort(nums, mid+1, r);
-
     merge (nums, l, mid, r);
 }
 int main() {

@@ -4,7 +4,6 @@
 // ask a question to each cell of dp that == > 
 // i have ith number so can we make sum sum - vec[i] so that we together can make "SUM"...
 
-
 #include <iostream>
 #include <vector>
 #include <bits/stdc++.h>
@@ -32,7 +31,6 @@ public:
         return dp[sum];
     }
 };
-
 int main () {
     vector<int> vec =  {1, 5, 11, 5};
     Solution s;

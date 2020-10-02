@@ -24,7 +24,7 @@ void solve(vector<int>& vec, int size) {
             break;
 
             case 2:
-                if(vec[right]z== 2) {
+                if(vec[right]== 2) {
                     right--;
                 } else {
                     swap(vec[right], vec[mid]);

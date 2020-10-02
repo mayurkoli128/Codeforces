@@ -3,19 +3,19 @@
 #include <vector>
 using namespace std;
 
-void initialize(vector<int>& lookup, string s) {
-    int ptr1 = 0;
+// void initialize(vector<int>& lookup, string s) {
+//     int ptr1 = 0;
 
-    for(int i = 1; i < s.size(); ++i) {
-        if(s[ptr1] == s[i]) {
-            lookup[i] = ++ptr1;
+//     for(int i = 1; i < s.size(); ++i) {
+//         if(s[ptr1] == s[i]) {
+//             lookup[i] = ++ptr1;
 
-        } else {
-            lookup[i] = 0;
-            ptr1 = 0;
-        }
-    }
-}
+//         } else {
+//             lookup[i] = 0;
+//             ptr1 = 0;
+//         }
+//     }
+// }
 
 int solve(string s1, string s2) {
     int index1 = 0, index2 = 0;
@@ -29,7 +29,7 @@ int solve(string s1, string s2) {
     while(index1 < sz1 && index2 < sz2) {
         if(s1[index1] == s2[index2]) {
             index2++;
-        }
+        w
         // mismatched...
         else {
             if(index2 > 0){

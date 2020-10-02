@@ -1,0 +1,1 @@
+{"name":"Local: test","url":"/home/mayurk/Documents/geeksforgeeks/test.cpp","tests":[{"id":1601284793560,"input":"","output":""},{"id":1601286144389,"input":"5\n1\n5\n42\n1337\n1000000000\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/mayurk/Documents/geeksforgeeks/test.cpp","group":"local","local":true}
