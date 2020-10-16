@@ -1,3 +1,6 @@
 *.out
 test*
 .vscode
+*.txt
+Tiny.URL
+memo
