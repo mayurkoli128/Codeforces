@@ -30,7 +30,6 @@ int main() {
         nums.resize(n);
         for(ll& in:nums)   cin>>in;
 
-        // question (mid)-is it possible to split the array in k subarray's, and after all these numbers we will choose minimum.
         ll l=*max_element(all(nums)), r=accumulate(all(nums), 0ll);
         while (l<=r) {
             ll mid=(l+r)>>1;
