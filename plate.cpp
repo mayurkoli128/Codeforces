@@ -4,6 +4,7 @@ using namespace std;
 typedef long long int ll;
 typedef vector<vector<int>>graph;
 const int xx[]={1, 0, 0, -1};
+#define len(a) int((a).size())
 const int yy[]={0,-1, 1 , 0};
 int x[]={1,0,-1,-1,0,1};
 int y[]={1,1,0,-1,-1,0};
@@ -16,6 +17,14 @@ template<class T>T mn(T begin, T end){return min_element(begin, end);}
 template<class T>void print(vector<T>nums){for(T i:nums)cout<<i<<" ";cout<<"\n";}
 template<class T>void read(vector<T>nums){for(T& i:nums)cin>>i;}
 template<class T>void alloc(vector<vector<T>*>nums, T n){for(auto v:nums)v->resize(n+1);}
+void dbg_out() { cerr << endl; }
+template<typename Head, typename... Tail> void dbg_out(Head H, Tail... T) { cerr << ' ' << H; dbg_out(T...); }
+#ifndef NEAL_DEBUG
+#define dbg(...) cerr << "(" << #__VA_ARGS__ << "):", dbg_out(__VA_ARGS__)
+#else
+#define dbg(...)
+#endif
+ 
 vector<string>s;
 vector<vector<int>>d;
 int m,n,k;
@@ -44,7 +53,7 @@ int main () {
     while (t--) {
         ................................................................
         // finding prime number ....
-        unordered_map<int, bool>umap;
+        map<int, bool>umap;
         for (int i=2; i<=1e6; ++i) {
             bool flag=true ;
             for (int j=2; j*j<=i; ++j) {
@@ -151,6 +160,12 @@ int main () {
                     if (isValid(x-1, y, vis)) 
                         dfs(x-1, y, vis);
                 }
+            }
+            // find ncr
+            int ncr(int n, int r) {
+                if (n<r)    return 0;
+                if (r == 0) return 1; 
+                return ncr(n-1, r)+ncr(n-1, r-1);
             }
     }
     return 0;
