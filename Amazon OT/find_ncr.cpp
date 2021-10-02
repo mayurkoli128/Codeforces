@@ -18,7 +18,7 @@ signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
-    ll test = 1;
+    int test = 1;
     // cin >> test;
     while (test--) {
         int n, r ;
