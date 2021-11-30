@@ -17,39 +17,7 @@ template<class T>T mn(T begin, T end){return min_element(begin, end);}
 template<class T>void getUnique(vector<T>& nums){sort(nums.begin(), nums.end()); nums.erase(unique(nums.begin(), nums.end()), nums.end());}
 template<class T>void print(vector<T>nums){for(T i:nums)cout<<i<<" ";cout<<"\n";}
 template<class T>void read(vector<T>&nums){for(T& i:nums)cin>>i;}
-        
-vector<int> getTimeStamps(vector<int> time, vector<int> dir) {
-    int n = time.size();
-    time.push_back(1E9 + 1E6);
-    vector<int> ans(n);
-    queue<int> q[2]; 
-    string prev = "none" ;
-    for (int i = 0, t = time[0] ; i < n; i++) {
-        q[dir[i]].push(i);
-        while (t < time[i + 1]) {
-            if (!q[0].empty() and prev == "entry") {
-                ans[q[0].front()] = t++;
-                q[0].pop();
-                prev = "entry";
-            }
-            else if (!q[1].empty()) {
-                ans[q[1].front()] = t++;
-                q[1].pop();
-                prev = "exit";
-            }
-            else if (!q[0].empty()) {
-                ans[q[0].front()] = t++;
-                q[0].pop();
-                prev = "entry";
-            }
-            else {
-                t = time[i + 1];
-                prev = "none";
-            }
-        }
-    }
-    return ans;
-}
+
 signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
